@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    char*spis="Spis treści\n";
+    FILE*dok;
+    dok=fopen("test.txt", "at+");
+                             if(dok==NULL)
+                             {dok=fopen("test.txt", "wt+");
+                             }else {
+                                 printf("otwarto plik, dopisano zawartosc");
+                                 fseek(dok, 0, SEEK_END);
+                             }
+                             fputs(spis, dok);
+                             fclose(dok);
+
+
+
+}
